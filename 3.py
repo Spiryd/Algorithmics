@@ -1,16 +1,20 @@
-def longest_prefix_suffix(x, y):
+def overlap(x, y):
+    """
+    Funkcja zwraca największą liczbę k, dla której x[:k] == y[-k:].
+    """
     n = len(x)
     m = len(y)
-    max_possible = min(n, m)
-    # Sprawdzamy od największego możliwego k do 0
-    for k in range(max_possible, -1, -1):
+    max_k = 0
+    lim = min(n, m)
+
+    # Sprawdzamy wszystkie możliwe długości k od 1 do lim
+    for k in range(1, lim + 1):
         if x[:k] == y[m - k:]:
-            return k
-    return 0  # Gwarantowane, że zawsze zwróci przynajmniej 0
+            max_k = k
+    return max_k
 
-# Przykład użycia
-x = "Hello"
-y = "olleY"
-
-k = longest_prefix_suffix(x, y)
-print(f'Największe k, takie że "{x[:k]}" = "{y[len(y)-k:]}" wynosi: {k}')
+# Przykładowe użycie funkcji
+if __name__ == "__main__":
+    x = "abcdef"
+    y = "xyzabc"
+    print("Największe k:", overlap(x, y))
