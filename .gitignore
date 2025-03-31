@@ -15,3 +15,8 @@ Cargo.lock
 
 # Windows executables
 *.exe
+
+
+# Added by cargo
+
+/target
