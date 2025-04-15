@@ -48,7 +48,6 @@ fn rabin_karp(text: &str, pattern: &str) -> Vec<usize> {
             // Obliczamy hash dla nowego okna:
             // Odejmujemy wkład pierwszego znaku poprzedniego okna,
             // przesuwamy okno (mnożymy przez d) i dodajemy nowy znak.
-            // Aby uniknąć ujemnych wartości, dodajemy q przed operacją modulo.
             let tmp = (hash_text + q - (text_bytes[i] as u64 * h) % q) % q;
             hash_text = (d * tmp + text_bytes[i + m] as u64) % q;
         }

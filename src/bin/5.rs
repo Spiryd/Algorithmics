@@ -34,7 +34,7 @@ fn build_prefix_automaton(p: &str) -> Vec<HashMap<char, usize>> {
     for j in 1..m {
         // Dla każdego znaku z alfabetu kopiujemy przejścia z automatu w stanie longest_prefix_sufix.
         for &c in &alphabet {
-            let next_state = *dfa[longest_prefix_sufix].get(&c).unwrap_or(&0);
+            let next_state: usize = *dfa[longest_prefix_sufix].get(&c).unwrap_or(&0);
             dfa[j].insert(c, next_state);
         }
         // Ustawiamy przejście dla znaku wzorca na aktualnym stanie.

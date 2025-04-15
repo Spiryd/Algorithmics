@@ -94,7 +94,7 @@ fn nucleotides_to_string(slice: &[Nucleotide]) -> String {
 
 fn main() {
     // Przykładowy ciąg – można go modyfikować wg potrzeb.
-    let sequence_str = "TTTATGCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCTAAATGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATAG";
+    let sequence_str = "ATGACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCATGACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCTAA";
     // Konwertujemy ciąg na wektor Nucleotide.
     let sequence = parse_sequence(sequence_str).expect("Błąd podczas parsowania sekwencji");
     
