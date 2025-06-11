@@ -37,10 +37,8 @@ fn rabin_karp(text: &str, pattern: &str) -> Vec<usize> {
     // Przesuwamy okno przez tekst
     for i in 0..=(n - m) {
         // Jeśli wartości hash się zgadzają, dokonujemy dokładnego porównania znaków
-        if hash_pattern == hash_text {
-            if &text[i..i + m] == pattern {
-                wynik.push(i);
-            }
+        if hash_pattern == hash_text && &text[i..i + m] == pattern{
+            wynik.push(i);
         }
 
         // Jeśli nie jesteśmy na końcu tekstu, aktualizujemy hash dla kolejnego okna
